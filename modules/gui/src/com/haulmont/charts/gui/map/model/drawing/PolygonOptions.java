@@ -5,11 +5,13 @@
 
 package com.haulmont.charts.gui.map.model.drawing;
 
+import java.io.Serializable;
+
 /**
  * @author korotkov
  * @version $Id$
  */
-public class PolygonOptions {
+public class PolygonOptions implements Serializable {
 
     private static final long serialVersionUID = -1836885545431952265L;
 
