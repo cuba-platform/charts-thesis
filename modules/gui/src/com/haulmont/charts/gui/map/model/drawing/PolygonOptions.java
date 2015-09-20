@@ -18,7 +18,7 @@ public class PolygonOptions implements Serializable {
     protected boolean clickable = true;
     protected boolean editable = false;
     protected String fillColor = "#993366";
-    protected Double fillOpacity = 0.5;
+    protected Double fillOpacity = 0.6;
     protected boolean geodesic = false;
     protected String strokeColor = "#000000";
     protected Double strokeOpacity = 1.0;
@@ -27,6 +27,11 @@ public class PolygonOptions implements Serializable {
     protected Integer zIndex = 0;
 
     public PolygonOptions() {
+    }
+
+    public PolygonOptions(boolean clickable, boolean editable) {
+        this.clickable = clickable;
+        this.editable = editable;
     }
 
     public PolygonOptions(boolean clickable, boolean editable, String fillColor, Double fillOpacity) {
@@ -51,6 +56,21 @@ public class PolygonOptions implements Serializable {
      */
     public void setEditable(boolean editable) {
         this.editable = editable;
+    }
+
+    /**
+     * @return true if created polygon should handle click events. Defaults to true
+     */
+    public boolean isClickable() {
+        return clickable;
+    }
+
+    /**
+     * Flag defining whether newly created polygon should handle click events. Defaults to true
+     * @param clickable true if polygon should handle click events
+     */
+    public void setClickable(boolean clickable) {
+        this.clickable = clickable;
     }
 
     /**
