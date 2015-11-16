@@ -590,6 +590,11 @@ public abstract class CoordinateChartLoader<T extends CoordinateChart> extends A
 
                 loadAbstractAxis(axis, axisElement);
 
+                String id = axisElement.attributeValue("id");
+                if (StringUtils.isNotEmpty(id)) {
+                    axis.setId(id);
+                }
+
                 String axisTitleOffset = axisElement.attributeValue("axisTitleOffset");
                 if (StringUtils.isNotEmpty(axisTitleOffset)) {
                     axis.setAxisTitleOffset(Integer.valueOf(axisTitleOffset));
