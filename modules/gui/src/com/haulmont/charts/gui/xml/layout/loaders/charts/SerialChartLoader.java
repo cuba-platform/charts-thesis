@@ -177,6 +177,11 @@ public class SerialChartLoader extends RectangularChartLoader<SerialChart> {
                 axis.setMinPeriod(DatePeriod.valueOf(minPeriod));
             }
 
+            String parseDates = axisElement.attributeValue("parseDates");
+            if (StringUtils.isNotEmpty(parseDates)) {
+                axis.setParseDates(Boolean.valueOf(parseDates));
+            }
+
             String startOnAxis = axisElement.attributeValue("startOnAxis");
             if (StringUtils.isNotEmpty(startOnAxis)) {
                 axis.setStartOnAxis(Boolean.valueOf(startOnAxis));
